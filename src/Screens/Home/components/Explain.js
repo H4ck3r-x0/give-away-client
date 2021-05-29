@@ -13,12 +13,12 @@ export default function Explain({ ...props }) {
           style={{ marginLeft: -2 }}
           title="Post an Item"
           left={() => (
-            <MaterialIcons name="post-add" size={25} color="#5C0099" />
+            <MaterialIcons name="post-add" size={25} color="#14213D" />
           )}
         />
         <List.Item
           title="Choose a recipient"
-          left={() => <Feather name="user-check" size={25} color="#5C0099" />}
+          left={() => <Feather name="user-check" size={25} color="#14213D" />}
         />
         <List.Item
           title="Arrange pickup"
@@ -27,7 +27,7 @@ export default function Explain({ ...props }) {
               style={{ marginLeft: -2 }}
               name="time-outline"
               size={25}
-              color="#5C0099"
+              color="#14213D"
             />
           )}
         />
@@ -38,7 +38,7 @@ export default function Explain({ ...props }) {
               style={{ marginLeft: -1 }}
               name="repeat"
               size={25}
-              color="#5C0099"
+              color="#14213D"
             />
           )}
         />

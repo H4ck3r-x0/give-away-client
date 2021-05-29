@@ -5,15 +5,16 @@ const style = StyleSheet.create({
     flex: 1,
   },
   description: {
+    backgroundColor: "#3D0066",
     paddingTop: 10,
     alignItems: "center",
   },
   question: {
-    color: "#FCA311",
+    color: "#FFD500",
   },
   textDescription: {
     paddingTop: 5,
-    color: "#000000",
+    color: "#fff",
     paddingBottom: 20,
     fontWeight: "600",
     textAlign: "center",

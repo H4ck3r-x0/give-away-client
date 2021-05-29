@@ -7,26 +7,26 @@ import style from "../HomeScreenStyle";
 export default function Description({ ...props }) {
   return (
     <View style={style.description}>
-      <Title style={style.question}>Wnat free stuff?</Title>
+      <Title style={style.question}>Want free stuff?</Title>
       <Title style={style.question}>Got stuff to give away?</Title>
       <Text style={style.textDescription}>
         You can give or get free stuff in your local community.
       </Text>
       <View style={style.buttonsContainer}>
         <Button
-          icon={() => <Entypo name="plus" size={22} color="#FFD500" />}
+          icon={() => <Entypo name="plus" size={22} color="#14213D" />}
           uppercase={false}
           mode="contained"
-          color="#5C0099"
+          color="#E5E5E5"
         >
           Give
         </Button>
         <Button
           uppercase={false}
           icon={() => (
-            <MaterialIcons name="read-more" size={22} color="#FFD500" />
+            <MaterialIcons name="read-more" size={22} color="#14213D" />
           )}
-          color="#5C0099"
+          color="#E5E5E5"
           mode="contained"
           onPress={() => props.navigation.navigate("Browse")}
         >

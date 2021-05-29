@@ -1,14 +1,47 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Title, Button } from "react-native-paper";
+import { View } from "react-native";
 import style from "./BrowseScreenStyle";
-import { Entypo } from "@expo/vector-icons";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import RequestsScreen from "../Requests/RequestsScreen";
+import OffersScreen from "../Offers/OffersScreen";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Tab = createMaterialTopTabNavigator();
+
+function TopTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Offers"
+      tabBarOptions={{
+        showIcon: true,
+      }}
+    >
+      <Tab.Screen
+        name="Offers"
+        component={OffersScreen}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="offer" size={24} color="#14213D" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Requests"
+        component={RequestsScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="hand-right" size={20} color="#14213D" />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 function BrowseScreen() {
   return (
     <View style={style.container}>
-      <Text style={style.textDescription}>
-        You can give or get free stuff in things in you local community.
-      </Text>
+      <TopTabs />
     </View>
   );
 }
