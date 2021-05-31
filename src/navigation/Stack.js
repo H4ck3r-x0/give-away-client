@@ -1,11 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "../Screens/Home/HomeScreen";
-import BrowseScreen from "../Screens/Browse/BrowseScreen";
-import RequestsScreen from "../Screens/Requests/RequestsScreen";
-import OffersScreen from "../Screens/Offers/OffersScreen";
-
+import HomeScreen from "../Screens/HomeScreen/HomeScreen";
+import BrowseScreen from "../Screens/BrowseScreen/BrowseScreen";
+import RequestsScreen from "../Screens/RequestsScreen/RequestsScreen";
+import OffersScreen from "../Screens/OffersScreen/OffersScreen";
+import RequestDetailsScreen from "../Screens/RequestDetailsScreen/RequestDetailsScreen";
 const Stack = createStackNavigator();
 
 function HomeStack() {
@@ -17,6 +17,10 @@ function HomeStack() {
         <Stack.Screen
           name={"Requests"}
           component={RequestsScreen}
+        ></Stack.Screen>
+        <Stack.Screen
+          name={"Request Details"}
+          component={RequestDetailsScreen}
         ></Stack.Screen>
         <Stack.Screen name={"Offers"} component={OffersScreen}></Stack.Screen>
       </Stack.Navigator>

@@ -2,8 +2,8 @@ import React from "react";
 import { View } from "react-native";
 import style from "./BrowseScreenStyle";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import RequestsScreen from "../Requests/RequestsScreen";
-import OffersScreen from "../Offers/OffersScreen";
+import RequestsScreen from "../RequestsScreen/RequestsScreen";
+import OffersScreen from "../OffersScreen/OffersScreen";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Tab = createMaterialTopTabNavigator();

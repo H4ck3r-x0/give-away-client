@@ -37,7 +37,7 @@ const style = StyleSheet.create({
     height: 300,
   },
   itemTitle: {
-    // width: "100%",
+    flexWrap: "wrap",
     paddingLeft: 8,
     paddingTop: 6,
     color: "#14213D",
@@ -60,6 +60,7 @@ const style = StyleSheet.create({
     fontSize: 14,
     color: "#14213D",
     paddingLeft: 8,
+    flexWrap: "wrap",
   },
   itemCreatedAt: {
     marginLeft: 8,
