@@ -45,6 +45,15 @@ const style = StyleSheet.create({
     fontSize: 18,
     fontWeight: "700",
   },
+  itemPostedBy: {
+    flexWrap: "wrap",
+    paddingLeft: 8,
+    paddingTop: 6,
+    color: "#ccc",
+    marginBottom: 8,
+    fontSize: 16,
+    fontWeight: "700",
+  },
   userContainer: {
     flexDirection: "row",
     alignItems: "center",
