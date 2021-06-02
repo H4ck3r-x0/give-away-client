@@ -1,21 +1,49 @@
-import React from "react";
-import { View, Text, SafeAreaView, Dimensions, ScrollView } from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Dimensions,
+  ScrollView,
+  Modal,
+} from "react-native";
 import style from "./RequestDetailsScreenStyle";
-import moment from "moment";
 import faker from "faker";
 import { Avatar, Divider } from "react-native-paper";
 import Slideshow from "react-native-slideshow-improved";
 import MapView from "react-native-maps";
+import ImageViewer from "react-native-image-zoom-viewer";
 
-const IMAGES = new Array(10).fill().map((_, index) => ({
+const IMAGES = new Array(3).fill().map((_, index) => ({
   url: faker.image.image(),
 }));
+
 function RequestDetailsScreen({ ...props }) {
   const { title, body, image, username, userAvatar, createdAt } =
     props.route?.params;
+  const [imagesModal, setImagesModal] = useState(false);
+
+  const showModal = () => {
+    setImagesModal(true);
+  };
+  const hideModal = () => {
+    setImagesModal(false);
+  };
 
   return (
     <SafeAreaView style={style.container}>
+      <Modal
+        animationType="fade"
+        visible={imagesModal}
+        onRequestClose={hideModal}
+        transparent={true}
+      >
+        <ImageViewer
+          imageUrls={IMAGES}
+          enableSwipeDown
+          onSwipeDown={hideModal}
+        />
+      </Modal>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Slideshow
           indicatorSize={12}
@@ -23,10 +51,12 @@ function RequestDetailsScreen({ ...props }) {
           arrowSize={12}
           height={Dimensions.get("window").width * (4 / 5.3)}
           dataSource={IMAGES}
+          onPress={showModal}
         />
-        {/* <Image source={{ uri: image }} s tyle={style.itemThumbnail} /> */}
         <Text style={style.itemTitle}>{title}</Text>
         <Text style={style.itemBody}>{body}</Text>
+        <Text style={style.itemCreatedAt}>{createdAt}</Text>
+
         <Divider style={{ marginTop: 20 }} />
         <View
           style={{ flexDirection: "column", paddingLeft: 4, paddingTop: 10 }}
@@ -51,7 +81,12 @@ function RequestDetailsScreen({ ...props }) {
           </View>
         </View>
         <View
-          style={{ flexDirection: "column", paddingLeft: 4, paddingTop: 10 }}
+          style={{
+            flexDirection: "column",
+            paddingLeft: 4,
+            paddingTop: 10,
+            paddingBottom: 15,
+          }}
         >
           <Text style={style.itemPostedBy}>Location</Text>
           <MapView
