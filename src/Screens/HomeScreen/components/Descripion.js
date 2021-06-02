@@ -18,6 +18,7 @@ export default function Description({ ...props }) {
           uppercase={false}
           mode="contained"
           color="#E5E5E5"
+          onPress={() => props.navigation.navigate("Add Post")}
         >
           Give
         </Button>
