@@ -1,9 +1,8 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
   },
   description: {
     backgroundColor: "#3D0066",
@@ -59,8 +58,9 @@ const style = StyleSheet.create({
   itemBody: {
     width: "100%",
     fontSize: 14,
-    color: "#14213D",
+    color: "red",
     paddingLeft: 8,
+    paddingBottom: 10,
     flexWrap: "wrap",
   },
   itemCreatedAt: {
@@ -69,6 +69,11 @@ const style = StyleSheet.create({
     fontWeight: "400",
     fontSize: 12,
     color: "#ccc",
+  },
+  map: {
+    // flex: 1,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height - 170,
   },
 });
 

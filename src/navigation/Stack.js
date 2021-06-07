@@ -9,17 +9,20 @@ import RequestsScreen from "../Screens/RequestsScreen/RequestsScreen";
 import OffersScreen from "../Screens/OffersScreen/OffersScreen";
 import RequestDetailsScreen from "../Screens/RequestDetailsScreen/RequestDetailsScreen";
 import AddPostScreen from "../Screens/AddPostScreen/AddPostScreen";
+import ItemLocationScreen from "../Screens/AddPostScreen/ItemLocationScreen";
+import PostPreviewScreen from "../Screens/AddPostScreen/PostPreviewScreen";
 const Stack = createStackNavigator();
 
 function HomeStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name={"Home"} component={HomeScreen}></Stack.Screen>
         <Stack.Screen
-          name={"Add Post"}
-          component={AddPostScreen}
+          name={"Home"}
+          component={HomeScreen}
+          options={{ headerShown: false }}
         ></Stack.Screen>
+
         <Stack.Screen
           name={"Browse"}
           component={BrowseScreen}
@@ -34,6 +37,18 @@ function HomeStack() {
               );
             },
           })}
+        ></Stack.Screen>
+        <Stack.Screen
+          name={"Add Post"}
+          component={AddPostScreen}
+        ></Stack.Screen>
+        <Stack.Screen
+          name={"Location"}
+          component={ItemLocationScreen}
+        ></Stack.Screen>
+        <Stack.Screen
+          name={"Preview"}
+          component={PostPreviewScreen}
         ></Stack.Screen>
         <Stack.Screen
           name={"Requests"}

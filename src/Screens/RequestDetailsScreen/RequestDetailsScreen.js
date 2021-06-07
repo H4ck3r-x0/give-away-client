@@ -90,6 +90,7 @@ function RequestDetailsScreen({ ...props }) {
         >
           <Text style={style.itemPostedBy}>Location</Text>
           <MapView
+            cacheEnabled
             provider="google"
             style={{ width: Dimensions.get("window").width, height: 400 }}
           />

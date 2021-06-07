@@ -49,7 +49,7 @@ const Item = ({
     >
       <Image source={{ uri: image }} style={style.itemThumbnail} />
     </Pressable>
-    <Pressable onPress={() => alert("preesssd")}>
+    <Pressable onPress={() => console.log("Pressed")}>
       <Text style={style.itemTitle}>{title}</Text>
     </Pressable>
     <Text style={style.itemBody}>{body}</Text>
