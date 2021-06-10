@@ -101,10 +101,11 @@ function AddPostScreen({ navigation }) {
               title,
               details,
               options,
+              images,
             })
           }
         >
-          Choose item location
+          Pick up Location
         </Button>
       </View>
     );
@@ -217,8 +218,10 @@ function AddPostScreen({ navigation }) {
         aspect: [4, 3],
         quality: 1,
       });
+
       if (!result.cancelled) {
-        setImages([...images, result.uri]);
+        let ImageName = result.uri.split("/").pop();
+        setImages([...images, { url: result.uri, imageName: ImageName }]);
       }
     } catch (error) {
       console.log("Error openning your studio", error);
@@ -233,7 +236,8 @@ function AddPostScreen({ navigation }) {
         quality: 1,
       });
       if (!result.cancelled) {
-        setImages([...images, result.uri]);
+        setImages([...images, { url: result.uri }]);
+        // console.log(result);
       }
     } catch (error) {
       console.log("Error openning your camera", error);
@@ -262,7 +266,7 @@ function AddPostScreen({ navigation }) {
         }}
       >
         <Image
-          source={{ uri: item }}
+          source={{ uri: item.url }}
           style={{
             width: 300,
             height: 180,

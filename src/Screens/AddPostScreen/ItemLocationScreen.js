@@ -7,7 +7,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 
 function ItemLocationScreen({ navigation, ...props }) {
-  const { title, details, options } = props.route.params && props.route.params;
+  const { title, details, options, images } =
+    props.route.params && props.route.params;
   const [userLocation, setUserLocation] = useState(null);
   const [itemLocation, setItemLocation] = useState(null);
   const [locationError, setLocationError] = React.useState(null);
@@ -24,8 +25,9 @@ function ItemLocationScreen({ navigation, ...props }) {
         accuracy: Location.Accuracy.Balanced,
       });
       if (location !== null || location !== undefined) {
-        location.coords.latitudeDelta = 0.0922;
-        location.coords.longitudeDelta = 0.0421;
+        location.coords.latitudeDelta = 0.0041;
+        location.coords.longitudeDelta = 0.0021;
+
         setUserLocation(location.coords);
         setItemLocation({
           latitude: location.coords.latitude,
@@ -44,22 +46,11 @@ function ItemLocationScreen({ navigation, ...props }) {
         showsUserLocation
         showsMyLocationButton
       >
-        {userLocation && (
-          <Circle
-            radius={50}
-            center={{
-              latitude: userLocation.latitude,
-              longitude: userLocation.longitude,
-            }}
-            fillColor="#eeffed"
-          ></Circle>
-        )}
-
         {itemLocation && (
           <Marker
             draggable
             coordinate={itemLocation}
-            title={"This you"}
+            title={"This is you"}
             pinColor="red"
             onDragEnd={(e) => {
               setItemLocation(e.nativeEvent.coordinate);
@@ -93,6 +84,7 @@ function ItemLocationScreen({ navigation, ...props }) {
               details,
               options,
               itemLocation,
+              images,
             })
           }
         >

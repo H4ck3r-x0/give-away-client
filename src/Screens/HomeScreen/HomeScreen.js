@@ -1,5 +1,5 @@
 import React from "react";
-import { View, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import Description from "./components/Descripion";
 import Explain from "./components/Explain";
 import { Divider } from "react-native-paper";
@@ -11,6 +11,12 @@ function HomeScreen({ navigation }) {
         <Description navigation={navigation} />
         <Divider />
         <Explain navigation={navigation} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate("TestScreen")}
+          style={{ margin: 20, backgroundColor: "purple", padding: 10 }}
+        >
+          <Text style={{ color: "white", fontWeight: "700" }}>Test Screen</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

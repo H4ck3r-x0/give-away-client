@@ -11,6 +11,7 @@ import RequestDetailsScreen from "../Screens/RequestDetailsScreen/RequestDetails
 import AddPostScreen from "../Screens/AddPostScreen/AddPostScreen";
 import ItemLocationScreen from "../Screens/AddPostScreen/ItemLocationScreen";
 import PostPreviewScreen from "../Screens/AddPostScreen/PostPreviewScreen";
+import TestScreen from "../Screens/TestScreen.js/TestScreen";
 const Stack = createStackNavigator();
 
 function HomeStack() {
@@ -43,6 +44,9 @@ function HomeStack() {
           component={AddPostScreen}
         ></Stack.Screen>
         <Stack.Screen
+          options={{
+            headerTitle: "Pickup Location",
+          }}
           name={"Location"}
           component={ItemLocationScreen}
         ></Stack.Screen>
@@ -59,6 +63,7 @@ function HomeStack() {
           component={RequestDetailsScreen}
         ></Stack.Screen>
         <Stack.Screen name={"Offers"} component={OffersScreen}></Stack.Screen>
+        <Stack.Screen name={"TestScreen"} component={TestScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
